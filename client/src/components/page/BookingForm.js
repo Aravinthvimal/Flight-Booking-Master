@@ -3,10 +3,12 @@ import { Formik, Field, Form, FieldArray } from "formik";
 import * as Yup from "yup";
 import BookingFormCss from "./BookingForm.module.css";
 import { ToastContainer, toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
 import "react-toastify/dist/ReactToastify.css";
 import axiosInstance from "../../api/baseApi";
 
 const BookingForm = ({ setUpdateSeat, updateSeat }) => {
+  const navigate = useNavigate();
   const initialValues = {
     mobile: "",
     date: "",
@@ -34,21 +36,8 @@ const BookingForm = ({ setUpdateSeat, updateSeat }) => {
       bookingDate: values.date,
     };
 
-    try {
-      const token = localStorage.getItem("token");
-
-      const newBooking = await axiosInstance.post("/user/booking", data, {
-        headers: {
-          authorization: "Bearer " + token,
-        },
-      });
-      console.log("newBooking", newBooking);
-      toast.success("Booking Successfull");
-      setUpdateSeat(!updateSeat);
-    } catch (error) {
-      console.log("error", error);
-      toast.error("Booking Error");
-    }
+    alert(`Tickets Booked Successfully! Enjoy your journey`);
+    navigate("/list-bookings");
   };
 
   return (
@@ -70,7 +59,7 @@ const BookingForm = ({ setUpdateSeat, updateSeat }) => {
               <Field
                 name="mobile"
                 className={BookingFormCss.field_input}
-                placeholder="9969403698"
+                placeholder="Enter your mobile number"
               />
               {errors.mobile ? (
                 <div className={BookingFormCss.book_error}>{errors.mobile}</div>
@@ -85,7 +74,7 @@ const BookingForm = ({ setUpdateSeat, updateSeat }) => {
                 name="date"
                 type="date"
                 className={BookingFormCss.field_input}
-                placeholder="25-1-1999"
+                placeholder="Enter date of Travel"
               />
               {errors.date ? (
                 <div className={BookingFormCss.book_error}>{errors.date}</div>
@@ -140,7 +129,7 @@ const BookingForm = ({ setUpdateSeat, updateSeat }) => {
               ) : null}
             </div>
 
-            <button type="submit" className={BookingFormCss.submit}>
+            <button className={BookingFormCss.submit}>
               Submit
             </button>
           </Form>

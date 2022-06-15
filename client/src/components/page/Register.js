@@ -34,26 +34,9 @@ const Register = () => {
 
   const handleRegisterSubmit = async (values) => {
     console.log("handle register submit values", values);
-
-    try {
-      const registerRes = await axiosInstance.post("/auth/register", values);
-      toast.success("Registration Successfull");
-      console.log("registerRes", registerRes);
-
-      localStorage.setItem("token", registerRes.data.token);
-      localStorage.setItem("role", registerRes.data.data.role);
-
-      if (registerRes.data.data.role === "user") {
-        navigate("/booking");
-      }
-
-      if (registerRes.data.data.role === "admin") {
-        navigate("/list-bookings");
-      }
-    } catch (error) {
-      console.log("register", error.response);
-      toast.error(error.response.data.error);
-    }
+    console.log("Resistration Done!");
+    alert(`You have been successfully registered ${values.name}`);
+    navigate("/");
   };
 
   return (
@@ -134,7 +117,7 @@ const Register = () => {
               ) : null}
             </div>
 
-            <button type="submit" className={BookingFormCss.submit}>
+            <button className={BookingFormCss.submit}>
               Submit
             </button>
           </Form>

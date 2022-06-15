@@ -26,6 +26,10 @@ const Header = () => {
           buttonText="List Booking"
           handleButtonHandler={() => handleClick("/list-bookings")}
         />
+        <Button 
+         buttonText="Login" id="login-btn"
+         handleButtonHandler={() => handleClick("/login")}
+        />
       </div>
     </div>
   );

@@ -1,14 +1,24 @@
 import mongoose from "mongoose";
 
-const connectDB = async () => {
-  const MONGO_URI = process.env.MONGO_URI;
+const connectDB = () => {
+
+  const connectionParams = {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  };
 
   try {
-    const conn = await mongoose.connect(MONGO_URI);
-    console.log(`Connected to DB`);
+
+    mongoose.connect(process.env.MONGO_URI, connectionParams);
+    console.log("Connected to database successfully");
+
   } catch (error) {
-    console.log(`DB connection error`, error.message);
+
+    console.log(error);
+    console.log("Could not connect to the database");
+
   }
 };
 
 export default connectDB;
+

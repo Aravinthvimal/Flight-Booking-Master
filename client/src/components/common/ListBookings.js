@@ -48,6 +48,12 @@ const ListBookings = () => {
           <th className={TableCss.th}>Mobile</th>
           <th className={TableCss.th}>Arrived</th>
         </tr>
+        <tr>
+          <td> 06162022001 </td>
+          <td> A1 - First </td>
+          <td> 848945051 </td>
+          <td> 12:55 </td>
+        </tr>
         {bookingList.map((book) => {
           const seats = book.selectedSeats.map((seat) => {
             return `${seat.seatName} - `;

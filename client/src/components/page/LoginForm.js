@@ -18,6 +18,7 @@ const LoginForm = () => {
   };
 
   const loginFormValidation = Yup.object({
+    name: Yup.string().required("Name is required"),
     email: Yup.string()
       .email("Enter valid email")
       .required("Email is required"),
@@ -28,25 +29,9 @@ const LoginForm = () => {
 
   const handleLoginSubmit = async (values) => {
     console.log("handle submit values", values);
-
-    try {
-      const loginRes = await axiosInstance.post("/auth/login", values);
-      toast.success("Login Successfull");
-      console.log("loginRes", loginRes);
-      if (loginRes.data.data.role === "user") {
-        navigate("/booking");
-      }
-
-      if (loginRes.data.data.role === "admin") {
-        navigate("/list=bookings");
-      }
-
-      localStorage.setItem("token", loginRes.data.token);
-      localStorage.setItem("role", loginRes.data.data.role);
-    } catch (error) {
-      console.log("login", error);
-      toast.error(error.response.data.error);
-    }
+    console.log("Form submitted");
+    alert(`Welcome back ${values.name}`);
+    navigate("/");
   };
 
   const handleRegisterClick = () => {
@@ -65,6 +50,16 @@ const LoginForm = () => {
       >
         {({ errors }) => (
           <Form>
+            <div className={BookingFormCss.booking_input}>
+              <label className={BookingFormCss.booking_label} htmlFor="email">
+                Name :
+              </label>
+              <Field name="name" className={BookingFormCss.field_input} />
+              {errors.name ? (
+                <div className={BookingFormCss.book_error}>{errors.name}</div>
+              ) : null}
+            </div>
+
             <div className={BookingFormCss.booking_input}>
               <label className={BookingFormCss.booking_label} htmlFor="email">
                 Email :
@@ -94,7 +89,7 @@ const LoginForm = () => {
               ) : null}
             </div>
 
-            <button type="submit" className={BookingFormCss.submit}>
+            <button className={BookingFormCss.submit}>
               Submit
             </button>
           </Form>
