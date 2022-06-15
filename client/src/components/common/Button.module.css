@@ -1,0 +1,17 @@
+.buttonwrap {
+  margin: 1rem;
+}
+
+.button {
+  padding: 1rem 1.2rem;
+  border-radius: 5rem;
+
+  color: white;
+  background-color: #32337e;
+}
+
+.button:hover {
+  color: #fff;
+  background-color: #000;
+  cursor: pointer;
+}

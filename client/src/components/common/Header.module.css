@@ -1,0 +1,17 @@
+.logo {
+  height: 80px;
+  width: 80px;
+}
+
+.headerWrap {
+  display: flex;
+  padding: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid black;
+}
+
+.buttons {
+  display: flex;
+  margin: 0 1rem;
+}

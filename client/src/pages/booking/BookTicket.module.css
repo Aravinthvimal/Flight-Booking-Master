@@ -1,0 +1,7 @@
+.book_wrap {
+  display: flex;
+}
+
+.book_wrap > div {
+  flex: 1;
+}

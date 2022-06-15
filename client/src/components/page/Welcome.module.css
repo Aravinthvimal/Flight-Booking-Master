@@ -1,0 +1,44 @@
+.welcome_wrapper {
+  display: flex;
+  margin: 5rem 0;
+}
+
+.welcome_wrapper > div {
+  flex: 1;
+}
+
+.image_main {
+  width: 100%;
+  height: 100%;
+}
+
+.text_heading {
+  font-size: 3rem;
+}
+
+.text_para {
+  font-size: 2rem;
+  padding: 4rem 0;
+  padding-top: 1rem;
+  margin-bottom: 3rem;
+}
+
+.text {
+  padding: 4rem;
+}
+
+.logo_color {
+  color: darkgoldenrod;
+}
+
+.button {
+  padding: 1rem;
+  border: 2px solid black;
+  color: white;
+  background-color: black;
+}
+
+.button:hover {
+  background-color: white;
+  color: black;
+}

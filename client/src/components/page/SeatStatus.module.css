@@ -1,0 +1,42 @@
+.seat_range {
+  border: 3px solid black;
+  height: 100%;
+  width: 100%;
+  margin-top: 4rem;
+}
+
+.seat_box {
+  height: 20px;
+  width: 40px;
+  border: 1px solid black;
+  margin: 5px;
+  text-align: center;
+  color: black;
+  background-color: greenyellow;
+}
+
+.seat_box_wrap {
+  padding: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.seat_box_booked {
+  height: 20px;
+  width: 40px;
+  border: 1px solid black;
+  margin: 5px;
+  text-align: center;
+  color: black;
+  background-color: lightsalmon;
+}
+
+/* .seat_booked {
+  color: black;
+  background-color: lightsalmon;
+} */
+/* 
+.seat_not_booked {
+  color: black;
+  background-color: greenyellow;
+} */

@@ -1,0 +1,42 @@
+.booking_form {
+  margin: 4rem;
+  /* border: 2px solid red; */
+  width: 100%;
+}
+
+.book_seats_heading {
+  text-align: center;
+  margin: 2rem 0;
+}
+
+.booking_input {
+  margin: 1rem 0;
+}
+
+.booking_label {
+  font-size: 1.5rem;
+  margin-right: 2rem;
+}
+
+.field_input {
+  font-size: 1rem;
+}
+
+.book_error {
+  color: red;
+  display: block;
+  margin: 1rem;
+}
+
+.book_button {
+  margin: 1rem;
+  padding: 5px;
+}
+
+.submit {
+  padding: 1rem;
+  font-size: 1rem;
+  color: white;
+  background-color: #32337e;
+  /* margin: 0 auto;  */
+}
