@@ -1,18 +1,44 @@
-How to run this application
+Tech Stack:
 
--There are two roles users and admins
-users can book seats and admin acn see the list
+ Front-end : React JS
 
--Backend :
-in server folder do npm install and then register yourself the admin and see the seats db first.
-using admin/seed-seats api
+ Back-end  : Node JS
 
-create a env file with fields :
-PORT=5000
-MONGO_URI=
-JWT_SECRET=
+ Db 	   : Mongo BD
 
-- frontend :
 
-create a env file with fields :
-REACT_APP_API_URL= (your running backend url)
+
+
+ Types of Users:
+
+ User
+
+ Admin
+
+
+
+ User Use cases:
+
+	- login
+
+	- signup
+
+	- searching for flights based on date and time.
+
+	- booking tickets on a flight based on availability (assuming the default seats count is 60)
+
+	- my booking -> to list out all the bookings made by the person
+
+	- logout
+
+
+
+ Admin Use Cases
+
+ 	- login (for admin use separate UI)
+
+ 	- Add Flights
+
+ 	- Remove Flights
+
+ 	- view all the bookings based on flight number and flights time
