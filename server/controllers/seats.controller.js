@@ -17,7 +17,7 @@ export const seedSeatData = async (req, res, next) => {
     let seatRange = ["A", "B", "C", "D", "E", "F"];
 
     let start = 1;
-    for (let i = 1; i <= 30; i++) {
+    for (let i = 1; i <= 60; i++) {
       for (let j = 0; j < seatRange.length; j++) {
         let obj = {
           seatNumber: start,

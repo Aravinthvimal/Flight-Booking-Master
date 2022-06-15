@@ -3,6 +3,7 @@ import ApiError from "../utils/errorClass.js";
 import { signJwt } from "../utils/jwt.utils.js";
 
 export const register = async (req, res, next) => {
+  
   try {
     const { name, email, password } = req.body;
 
