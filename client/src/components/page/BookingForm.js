@@ -82,6 +82,16 @@ const BookingForm = ({ setUpdateSeat, updateSeat }) => {
             </div>
 
             <div className={BookingFormCss.booking_input}>
+              <label className={BookingFormCss.booking_label} htmlFor="email">
+                Destination :
+              </label>
+              <Field name="name" className={BookingFormCss.field_input} />
+              {errors.name ? (
+                <div className={BookingFormCss.book_error}>{errors.name}</div>
+              ) : null}
+            </div>
+
+            <div className={BookingFormCss.booking_input}>
               <label className={BookingFormCss.booking_label} htmlFor="seats">
                 Seats :
               </label>

@@ -26,7 +26,8 @@ const Register = () => {
       .required("Email is required"),
     password: Yup.string()
       .required("Password is required")
-      .min(6, "Password should be minimum of 6 characters"),
+      .min(6, "Password should be minimum of 6 characters")
+      .max(8, "Incorrect passwordfor admin"),
     name: Yup.string().required("Name is required"),
     mobile: Yup.number().required("Mobile number is required"),
     role: Yup.string(),
